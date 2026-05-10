@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: #f9f6fb;
+  color: #4a3b5f;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+header {background:#b39ddb; color:white; padding:20px; text-align:center;}
+nav {background:#ede7f6; padding:10px; text-align:center;}
+nav a {margin:0 15px; text-decoration:none; color:#6a1b9a; font-weight:bold; transition:color 0.3s ease;}
+nav a:hover {color:#4a148c;}
+section {padding:40px; text-align:center;}
+
+.catalog {display:flex; justify-content:center; flex-wrap:wrap; gap:20px;}
+.item {
+  border:1px solid #d1c4e9;
+  border-radius:12px;
+  width:220px;
+  padding:15px;
+  background:#f3e5f5;
+  box-shadow:0 4px 8px rgba(106,27,154,0.2);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  opacity:0;
+  animation: fadeInCards 1s ease forwards;
+}
+@keyframes fadeInCards {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.item:nth-child(1) { animation-delay:0.5s; }
+.item:nth-child(2) { animation-delay:1s; }
+.item:nth-child(3) { animation-delay:1.5s; }
+
+.item img {width:100%; border-radius:8px; transition:transform 0.3s ease;}
+.item:hover {transform:translateY(-8px); box-shadow:0 8px 16px rgba(106,27,154,0.3);}
+.item:hover img {transform:scale(1.05);}
+.item button {
+  margin-top:10px; background:#9575cd; color:white; border:none;
+  padding:10px; border-radius:5px; cursor:pointer; font-weight:bold;
+  transition:background 0.3s ease, transform 0.2s ease;
+}
+.item button:hover {background:#7e57c2; transform:scale(1.05);}
+
+form {
+  opacity:0;
+  transform:translateY(30px);
+  animation: fadeInForm 1s ease forwards;
+  animation-delay:2s; /* форма з’являється трохи пізніше */
+}
+@keyframes fadeInForm {
+  from { opacity:0; transform:translateY(30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+form input, form textarea {
+  width:100%; margin:10px 0; padding:8px;
+  border:1px solid #d1c4e9; border-radius:5px; background:#f9f6fb;
+  transition:border-color 0.3s ease;
+}
+form input:focus, form textarea:focus {border-color:#7e57c2; outline:none;}
+form button {
+  background:#9575cd; color:white; border:none; padding:10px;
+  border-radius:5px; cursor:pointer; font-weight:bold;
+  transition:background 0.3s ease, transform 0.2s ease;
+}
+form button:hover {background:#7e57c2; transform:scale(1.05);}

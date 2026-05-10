@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Замовлення</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌸 Магазин квітів</h1>
+    <nav>
+      <a href="index.html">Каталог</a>
+      <a href="about.html">Про нас</a>
+      <a href="contacts.html">Контакти</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Форма замовлення</h2>
+    <p id="productName"></p>
+    <form>
+      <input type="text" placeholder="Ваше ім’я" required>
+      <input type="tel" placeholder="Телефон" required>
+      <textarea placeholder="Адреса доставки" required></textarea>
+      <button type="submit">Відправити</button>
+    </form>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get("product");
+    if(product) {
+      document.getElementById("productName").innerText = "Товар: " + product;
+    }
+  </script>
+</body>
+</html>
